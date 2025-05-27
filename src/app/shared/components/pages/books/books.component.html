@@ -1,0 +1,13 @@
+<div class="container">
+    <p>
+        All Books
+    </p>
+
+    <div class="book-container">
+        @for (item of allBooks$|async; track $index) {
+            <app-genres-card [bookDetails]="item"/>
+
+        }
+    </div>
+</div>
+

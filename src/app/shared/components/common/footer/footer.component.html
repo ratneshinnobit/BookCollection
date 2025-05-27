@@ -1,0 +1,57 @@
+<div class="footer">
+   <div class="top-section">
+     <div class="brand-info">
+       <p>BB</p>
+       <p>
+         BookBuddy motivates you to stay on track by recording how many days in a row you spend reading
+       </p>
+       <div class="social-icons">
+         <i class="fa-brands fa-x-twitter"></i>
+         <i class="fa-brands fa-facebook"></i>
+         <i class="fa-brands fa-linkedin"></i>
+       </div>
+     </div>
+ 
+     <div class="menu">
+       <p>Menu</p>
+       <ul>
+         <li *ngFor="let item of navbarDataList">
+           <a [routerLink]="item.route">{{ item.label }}</a>
+         </li>
+       </ul>
+     </div>
+ 
+     <div class="resources">
+       <p>Resources</p>
+       <ul>
+         <li *ngFor="let item of navbarDataList.slice(0, 3)">
+           <a [routerLink]="item.route">{{ item.label }}</a>
+         </li>
+       </ul>
+     </div>
+ 
+     <div class="about">
+       <p>About Us</p>
+       <ul>
+         <li *ngFor="let item of navbarDataList.slice(0, 3)">
+           <a [routerLink]="item.route">{{ item.label }}</a>
+         </li>
+       </ul>
+     </div>
+ 
+     <div class="contact">
+       <p>Contact</p>
+       <p>contact&#64;company.com</p>
+       <p>9198541277</p>
+     </div>
+   </div>
+ 
+   <div class="bottom-section">
+     <p>&copy; copyright 2025. All Rights Reserved</p>
+     <div class="bottom-links">
+       <p>Terms & Conditions</p>
+       <p>Privacy Policy</p>
+     </div>
+   </div>
+ </div>
+ 

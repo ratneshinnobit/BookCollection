@@ -1,0 +1,15 @@
+<div class="card">
+    <!-- Heading Section -->
+    <section class="heading-section">
+        <p class="heading-text">{{ trendingBook.heading }}</p>
+        <a href="{{ trendingBook.link }}">
+            <lucide-icon [img]="MoveUpRight" class="my-icon circle"></lucide-icon>
+        </a>
+    </section>
+
+    <!-- Price Section -->
+    <p class="price-text">${{ trendingBook.price }}</p>
+
+    <!-- Book Image -->
+    <img src="{{ trendingBook.image }}" alt="Book Image" class="book-image">
+</div>

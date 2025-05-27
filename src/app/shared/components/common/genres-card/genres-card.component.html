@@ -1,0 +1,32 @@
+<div class="book-card">
+  <!-- Price -->
+  <p class="price">${{bookDetails.price}}</p>
+
+  <!-- Image -->
+  <img src="{{bookDetails.image}}" alt="{{bookDetails.title}}" class="book-image">
+
+  <!-- Description -->
+  <div class="description-wrapper">
+    <p class="description clamp-text">
+      {{textClip(bookDetails.description)}}
+    </p>
+
+    <!-- Like Icon -->
+    <button class="like-icon" (click)="handleAddToFavourite(bookDetails._id)">
+      <lucide-icon [img]="Heart" class="my-icon"></lucide-icon>
+    </button>
+  </div>
+  <div *ngIf="bookNotInCart" class="cart" (click)="handleAddToCart(bookDetails._id)">
+    <p>Add to cart <i class="fa-solid fa-cart-shopping"></i></p>
+
+  </div>
+  <div *ngIf="!bookNotInCart" class="cart" >
+    <div class="quantity-controls" >
+      <button (click)="decrementQuantity()">-</button>
+      <span>{{ quantity }}</span>
+      <button (click)="incrementQuantity()">+</button>
+    </div>
+  </div>
+  
+
+</div>

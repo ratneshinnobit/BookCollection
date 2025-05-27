@@ -1,0 +1,26 @@
+<div class="book-container">
+    <h2 class="heading">
+        <span class="special">
+            Top
+        </span>
+        trending books
+    </h2>
+
+    <p>
+        Personalize your setting,follow your progress,archive your highlights and notes automatically
+    </p>
+    <p>
+        Glose is the ulimage reading hub grow your wings
+    </p>
+
+    <div class="card-parent">
+        @for (item of treandingBookList; track $index) {
+
+        <app-top-trending-card [trendingBook]="item" />
+        }
+
+    </div>
+
+
+
+</div>

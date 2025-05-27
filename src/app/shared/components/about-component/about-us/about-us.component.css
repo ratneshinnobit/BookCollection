@@ -1,0 +1,26 @@
+.intro-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 50px;
+    gap: 20px;
+    
+}
+
+.intro-content .image-container img {
+    width: 100%;
+    height: auto;
+   
+    border-radius: 10px;
+}
+
+.text-content {
+    width: 50%;
+   
+}
+
+ .text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}

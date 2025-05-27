@@ -1,0 +1,145 @@
+.footer {
+    background-color: #f8f9fa;
+    /* padding: 60px 20px 30px; */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.top-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-info {
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.brand-info p:first-child {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.brand-info p:nth-child(2) {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.menu,
+.resources,
+.about,
+.contact {
+    flex: 1 1 150px;
+}
+
+.menu p,
+.resources p,
+.about p,
+.contact p:first-child {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #007bff;
+}
+
+.contact p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.bottom-section {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    margin-top: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.bottom-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.bottom-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.bottom-links p {
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.bottom-links p:hover {
+    color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .brand-info,
+    .menu,
+    .resources,
+    .about,
+    .contact {
+        max-width: 100%;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .bottom-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width:480px) {
+
+     .top-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

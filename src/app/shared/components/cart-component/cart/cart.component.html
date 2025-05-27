@@ -1,0 +1,46 @@
+<div class="cart-container">
+    <p>Your Cart</p>
+
+    <div *ngIf="cartData.totalItemInCart > 0; else emptyCart">
+        <div *ngFor="let item of cartData.cartItemIds" class="cart-item">
+            <div class="item-detail">
+                <!-- Image -->
+                <img [src]="item.bookId.image" alt="{{ item.bookId.title }}" class="book-image" />
+
+                <!-- Title -->
+
+                <div>
+
+                    <h2>{{ item.bookId.title }}</h2>
+                    <h5>{{item.bookId.author}}</h5>
+
+                </div>
+
+            </div>
+
+            <div class="price-container">
+
+                <!-- Increment and Decrement Quantity -->
+                <div class="quantity-controls">
+                    <button (click)="decreaseQuantity(item.cartId,item._id)">-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button (click)="increaseQuantity(item.cartId,item._id)">+</button>
+                </div>
+    
+                <!-- Price -->
+                <p>Price: ${{ item.bookId.price * item.quantity }}</p>
+            </div>
+
+        </div>
+
+        <!-- Total Price -->
+      <div class="total-price">
+        <h3>Total: ${{ totalPrice}}</h3>
+        <button (click)="handleCheckout()" class="checkout">Checkout-></button>
+      </div>
+    </div>
+
+    <ng-template #emptyCart>
+        <p>Your cart is empty.</p>
+    </ng-template>
+</div>

@@ -1,0 +1,35 @@
+.hero-section {
+    background-color: #eff0e9;
+    padding: 20px 100px;
+}
+
+.book-store-section {
+    padding: 20px 100px;
+
+}
+
+.genres-store-section {
+    margin-top: 100px;
+    background-color: #000;
+    padding: 20px 100px;
+
+}
+
+.customer-review-section {
+    padding-top: 100px !important;
+    background-color: #eff0e9;
+    padding: 20px 100px;
+}
+
+@media (max-width:480px) {
+
+    .hero-section,
+    .customer-review-section {
+        background-color: #eff0e9;
+        padding: 20px 20px;
+    }
+    .book-store-section,.genres-store-section{
+        padding: 20px 20px;
+    }
+
+}

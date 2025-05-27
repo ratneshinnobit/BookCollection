@@ -1,0 +1,64 @@
+<nav [class.sticky]="isSticky" class="nav-container ">
+
+    <!-- <img src="" alt="" > -->
+    <h2>{{logo}}</h2>
+    <!-- Hamburger Icon for Mobile -->
+    <div class="mobile-menu-icon" (click)="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- routes section -->
+
+    <ul class="header-list-container">
+        <li *ngFor="let item of navbarDataList">
+            <a routerLink={{item.route}} routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">
+                {{item.label}}
+            </a>
+
+        </li>
+    </ul>
+
+    <!-- auth section -->
+    <section class="auth-button-container">
+
+        <button *ngIf="!(isAutenticated$|async)" class="login" routerLink="login">Log in</button>
+        <button *ngIf="!(isAutenticated$|async)" class="signup" routerLink="signup">SignUp</button>
+        <button *ngIf="isAutenticated$|async" class="cart" routerLink="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="cart-item">{{totalCartItem$}}</p>
+        </button>
+        <button *ngIf="isAutenticated$|async" class="signup" routerLink="" (click)="logout()">Logout</button>
+    </section>
+
+
+
+
+
+
+</nav>
+
+<!-- Mobile Modal Nav -->
+<div class="mobile-nav-modal" *ngIf="showMobileMenu">
+    <div class="modal-content">
+        <span class="close-icon" (click)="toggleMobileMenu()">&times;</span>
+
+        <ul class="header-list-container-mobile">
+            <li *ngFor="let item of navbarDataList">
+                <a routerLink="{{ item.route }}" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
+                    (click)="toggleMobileMenu()">
+                    {{ item.label }}
+                </a>
+            </li>
+        </ul>
+
+        <section class="auth-button-container-mobile">
+            <button *ngIf="!(isAutenticated$ | async)" class="login" routerLink="login" (click)="toggleMobileMenu()">Log
+                in</button>
+            <button *ngIf="!(isAutenticated$ | async)" class="signup" routerLink="signup"
+                (click)="toggleMobileMenu()">SignUp</button>
+            <button *ngIf="isAutenticated$ | async" class="signup"
+                (click)="logout(); toggleMobileMenu()">Logout</button>
+
+        </section>
+    </div>
+</div>

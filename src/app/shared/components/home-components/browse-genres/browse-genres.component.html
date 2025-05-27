@@ -1,0 +1,32 @@
+<div class="contianer">
+    <h2>
+        <span>
+            Browse
+        </span>
+        genres
+
+    </h2>
+    <ul class="genres-container">
+      <li *ngFor="let genre of genresList" [ngStyle]="{'background-color': isActiveGenre===genre ? '#f6ee6e' : '#000','color':isActiveGenre===genre ? '#000' : '#fff'}" (click)="updateGenre(genre)" class="genres">
+        {{genre}}
+      </li>
+    </ul>
+
+    <section class="genres-card-conatiner">
+        <div class="card-conatiner" *ngFor="let book of books$|async">
+            <app-genres-card [bookDetails]="book" [genre]="isActiveGenre" />
+        </div>
+      
+    </section>
+
+    <section class="customer-review-card-conatiner">
+        <div>
+            
+        </div>
+    </section>
+
+
+
+
+
+</div>

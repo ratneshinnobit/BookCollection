@@ -1,0 +1,140 @@
+.about-page {
+
+   width: 100%;
+ 
+}
+
+
+.intro-section{
+    background-color: #eff0e9;
+    padding: 20px 100px;
+
+}
+.values-section{
+    padding: 20px 100px;
+}
+
+.mission-section {
+    background-color: #f7f7f7;
+    padding: 50px;
+    text-align: center;
+}
+
+.mission-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mission-section .mission-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+
+.team-section {
+    background-color: #f7f7f7;
+    padding: 50px;
+}
+
+.team-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #555;
+}
+
+.cta-section {
+    background-color: #ff8c00;
+    padding: 50px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #ff8c00;
+    font-size: 20px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #e67e00;
+    transition: background-color 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-section .image-container img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .intro-section .text-content {
+        width: 80%;
+        padding-left: 0;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        margin-bottom: 40px;
+    }
+}

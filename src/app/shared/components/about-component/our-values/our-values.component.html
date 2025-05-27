@@ -1,0 +1,12 @@
+<h2>Our Core Values</h2>
+<div class="card-container">
+    <div class="card" *ngFor="let value of values">
+        <div class="card-image">
+            <!-- <img [src]="value.image" alt="{{value.title}}"> -->
+        </div>
+        <div class="card-content">
+            <h3>{{value.title}}</h3>
+            <p>{{value.description}}</p>
+        </div>
+    </div>
+</div>
