@@ -3,21 +3,21 @@ import { authAction } from "../actions/auth.action"
 import { AuthState } from "../../core/model/loginData.model"
 
 
-const initialState:AuthState={
-    isAuthenticated:false,
-    token:null
+const initialState: AuthState = {
+    isAuthenticated: false,
+    token: null,
 
 
 }
-console.log("state0",initialState)
+console.log("state0", initialState)
 
-export const  authReducer=createReducer(
+export const authReducer = createReducer(
     initialState,
-    on(authAction.login,(state,action)=>(
+    on(authAction.login, (state, action) => (
         {
             ...state,
-            isAuthenticated:action.payload.isAuthenticated,
-            token:action.payload.token
+            isAuthenticated: action.payload.isAuthenticated,
+            token: action.payload.token
         }
 
     )),
@@ -26,6 +26,6 @@ export const  authReducer=createReducer(
         ...state,
         isAuthenticated: false,
         token: null
-      }))
+    }))
 
 )

@@ -1,0 +1,99 @@
+.membership-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 100px;
+  background-color: #f9f9f9;
+  text-align: center;
+  /* font-family: 'Segoe UI', sans-serif; */
+  position: relative;
+
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.plans {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+.plan-card {
+    position: relative;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  padding-bottom: 4rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.premium{
+    background-color:#eff0e9;
+}
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card h2 {
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.plan-card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card ul li {
+  padding: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.plan-card button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #eee75c;
+  color: black;
+   border: 1px solid #9b9523;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+}
+
+.plan-card button:hover {
+  background-color: #d3cb38;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+}

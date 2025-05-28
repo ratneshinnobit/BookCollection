@@ -12,7 +12,10 @@
     </p>
 
     <!-- Like Icon -->
-    <button class="like-icon" (click)="handleAddToFavourite(bookDetails._id)">
+    <button *ngIf="!isfavouriteBook" class="like-icon" (click)="handleAddToFavourite(bookDetails._id)">
+      <lucide-icon [img]="Heart" class="my-icon"></lucide-icon>
+    </button>
+     <button *ngIf="isfavouriteBook" class="like-icon favourite" (click)="handleAddToFavourite(bookDetails._id)">
       <lucide-icon [img]="Heart" class="my-icon"></lucide-icon>
     </button>
   </div>

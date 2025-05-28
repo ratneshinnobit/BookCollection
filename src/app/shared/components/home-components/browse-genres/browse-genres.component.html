@@ -14,7 +14,8 @@
 
     <section class="genres-card-conatiner">
         <div class="card-conatiner" *ngFor="let book of books$|async">
-            <app-genres-card [bookDetails]="book" [genre]="isActiveGenre" />
+            
+            <app-genres-card [bookDetails]="book" [genre]="isActiveGenre" [FavouriteBookList]="favouriteBookList" />
         </div>
       
     </section>

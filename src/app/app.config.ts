@@ -10,6 +10,7 @@ import { bookReducer } from './store/reducers/book.reducer';
 import { provideToastr } from 'ngx-toastr';
 import { cartReducer } from './store/reducers/cart.reducer';
 import { allBookReducer } from './store/reducers/all-book.reducer';
+import { favouriteBookReducer } from './store/reducers/favourite-book.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideHttpClient(), provideStore(
@@ -17,7 +18,8 @@ export const appConfig: ApplicationConfig = {
       auth:authReducer,
       books:bookReducer,
       cart:cartReducer,
-      allBooks:allBookReducer
+      allBooks:allBookReducer,
+      favouriteBook:favouriteBookReducer
     }
   ), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),provideToastr()]
 };

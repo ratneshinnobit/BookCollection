@@ -24,3 +24,14 @@ export interface IBook {
     image: string,
     price: string
 }
+
+export interface IFavourite{
+    success:string;
+    message:string;
+    data:string[]
+}
+
+
+export interface IFavouriteBookList{
+    favouriteBooks:string[]
+}

@@ -1,9 +1,10 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { IBook, IGenreBook } from "../../core/model/booklist.model";
+import { IBook, IFavouriteBookList, IGenreBook } from "../../core/model/booklist.model";
 
 
 const getBookByGenreState=createFeatureSelector<IGenreBook[]>('books')
 const getAllBookState=createFeatureSelector<IBook[]>('allBooks')
+const getFavouriteBookState=createFeatureSelector<IFavouriteBookList>('favouriteBook')
 
 
 export const booksSelector=createSelector(
@@ -13,4 +14,8 @@ export const booksSelector=createSelector(
 export const getAllBooksSelector=createSelector(
     getAllBookState,
     (state:IBook[])=>state
+)
+export const getFavouriteBookSelector=createSelector(
+    getFavouriteBookState,
+    (state:IFavouriteBookList)=>state
 )

@@ -13,21 +13,21 @@ export class TopTrendingBookComponent {
     {
       id:1,
       heading:"A digital bookstore",
-      link:"/",
+      link:"/bookstore",
       image:"../../../../../assets/img/what-not-to-say.png",
       price:"33"
     },
     {
       id:1,
       heading:"A digital bookstore",
-      link:"/",
+      link:"/bookstore",
       image:"../../../../../assets/img/what-not-to-say.png",
       price:"33"
     },
     {
       id:1,
       heading:"A digital bookstore",
-      link:"/",
+      link:"/bookstore",
       image:"../../../../../assets/img/what-not-to-say.png",
       price:"33"
     },

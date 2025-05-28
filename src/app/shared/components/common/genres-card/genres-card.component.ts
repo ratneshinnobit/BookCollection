@@ -7,6 +7,8 @@ import { cartSelector } from '../../../../store/selectors/cart.selectors';
 import { IncreaseQuantityService } from '../../../../services/cart/increase-quantity.service';
 import { DecreaseQuantityService } from '../../../../services/cart/decrease-quantity.service';
 import { AddToFavouriteService } from '../../../../services/bookService/add-to-favourite.service';
+import { GetFavouriteService } from '../../../../services/bookService/get-favourite.service';
+import { getFavouriteBookSelector } from '../../../../store/selectors/book.selector';
 @Component({
   selector: 'app-genres-card',
   standalone: true,
@@ -17,14 +19,17 @@ import { AddToFavouriteService } from '../../../../services/bookService/add-to-f
 export class GenresCardComponent implements OnInit {
   @Input() bookDetails!: any
   @Input( ) genre!:string
+   @Input() FavouriteBookList!:string[]
   readonly Heart = Heart
   // bookIds!: string[]
   bookNotInCart: boolean = false;
   quantity!:any
   cartId!:string
   cartItemId!:string
+  isfavouriteBook:boolean=false
+ 
 
-  constructor(private cartService: AddToCartService, private store: Store,private incrementService:IncreaseQuantityService,private decrementService:DecreaseQuantityService,private addToFavourite:AddToFavouriteService) { }
+  constructor(private cartService: AddToCartService, private store: Store,private incrementService:IncreaseQuantityService,private decrementService:DecreaseQuantityService,private addToFavourite:AddToFavouriteService,private getFavouriteService:GetFavouriteService) { }
 
   textClip(text: string) {
     const clipedText = text.slice(0, 80);
@@ -49,6 +54,9 @@ export class GenresCardComponent implements OnInit {
       this.cartItemId=cartItem?._id as string
       
     });
+    this.watchFavouriteStore();
+  
+
     
 
     
@@ -77,11 +85,19 @@ export class GenresCardComponent implements OnInit {
     this.incrementService.increaseQuantity(this.cartId,this.cartItemId)
 
   }
-  handleAddToFavourite(bookId:string){
-    this.addToFavourite.addToFavourite(bookId,this.genre)
+   handleAddToFavourite(bookId:string){
+     this.addToFavourite.addToFavourite(bookId,this.genre)
+    //  this.getFavouriteService.getFavourite()
 
 
   }
+ private watchFavouriteStore(): void {
+    this.store.select(getFavouriteBookSelector).subscribe(data => {
+      this.isfavouriteBook = data.favouriteBooks.includes(this.bookDetails._id);
+    });
+  }
+
+  
  
   
 
