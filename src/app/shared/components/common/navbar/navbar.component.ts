@@ -8,6 +8,7 @@ import { authAction } from '../../../../store/actions/auth.action';
 import { navbarDataList } from '../../../../data/nav-data';
 import { GetCartitemService } from '../../../../services/cart/get-cartitem.service';
 import { cartSelector } from '../../../../store/selectors/cart.selectors';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +25,7 @@ export class NavbarComponent implements OnInit {
   totalCartItem$!: number
  
 
-  constructor(private store: Store, private cartService: GetCartitemService) {
+  constructor(private store: Store, private cartService: GetCartitemService,private toastr: ToastrService) {
     this.isAutenticated$ = this.store.select(selectIsAuthenticated)
 
   }
@@ -48,6 +49,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.store.dispatch(authAction.logout())
     localStorage.removeItem("auth-token")
+     this.toastr.success("logout successfull","",{timeOut:1000})
   }
 
   showMobileMenu = false;
